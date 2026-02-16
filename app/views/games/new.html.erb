@@ -1,0 +1,18 @@
+<div class="container mt-5">
+  <h1 class="mb-4">New Game</h1>
+
+  <div class="d-flex mb-4">
+    <% @letters.each do |letter| %>
+      <div class="badge bg-primary fs-4 p-3 me-2 shadow">
+        <%= letter %>
+      </div>
+    <% end %>
+  </div>
+
+  <p>What is the longest word you can find?</p>
+
+  <%= form_with url: score_path, method: :post, class: "d-flex" do %>
+    <%= text_field_tag :word, nil, class: "form-control me-2" %>
+    <%= submit_tag "Play", class: "btn btn-primary" %>
+  <% end %>
+</div>
